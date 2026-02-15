@@ -1,5 +1,7 @@
 
-import { Category, Product, VaultItem, Inquiry, Order } from './types';
+import { Category, Product, VaultItem, Inquiry, Order, UsageData } from './types';
+
+const now = new Date().toISOString();
 
 export const INITIAL_PRODUCTS: Product[] = [
   {
@@ -10,7 +12,9 @@ export const INITIAL_PRODUCTS: Product[] = [
     category: Category.AI,
     image: 'https://picsum.photos/seed/chatgpt/400/300',
     features: ['GPT-4o Access', 'DALL-E 3', 'Faster Response Time'],
-    stock: 100
+    stock: 100,
+    createdAt: '2024-01-10T08:00:00.000Z',
+    updatedAt: '2024-05-15T14:30:00.000Z'
   },
   {
     id: '2',
@@ -20,7 +24,9 @@ export const INITIAL_PRODUCTS: Product[] = [
     category: Category.AI,
     image: 'https://picsum.photos/seed/claude/400/300',
     features: ['Claude 3.5 Sonnet', 'High Priority Access', 'Early Beta Features'],
-    stock: 50
+    stock: 50,
+    createdAt: '2024-02-15T09:00:00.000Z',
+    updatedAt: '2024-06-20T11:20:00.000Z'
   },
   {
     id: '3',
@@ -30,7 +36,9 @@ export const INITIAL_PRODUCTS: Product[] = [
     category: Category.DESIGN,
     image: 'https://picsum.photos/seed/adobe/400/300',
     features: ['Photoshop', 'Illustrator', '100GB Cloud Storage'],
-    stock: 25
+    stock: 25,
+    createdAt: '2023-11-05T10:00:00.000Z',
+    updatedAt: '2024-04-12T16:45:00.000Z'
   },
   {
     id: '4',
@@ -40,7 +48,9 @@ export const INITIAL_PRODUCTS: Product[] = [
     category: Category.DESIGN,
     image: 'https://picsum.photos/seed/canva/400/300',
     features: ['Magic Resize', 'Premium Content', 'Brand Kit'],
-    stock: 200
+    stock: 200,
+    createdAt: '2024-01-20T12:00:00.000Z',
+    updatedAt: '2024-05-30T09:15:00.000Z'
   },
   {
     id: '5',
@@ -50,7 +60,9 @@ export const INITIAL_PRODUCTS: Product[] = [
     category: Category.VPN,
     image: 'https://picsum.photos/seed/vpn/400/300',
     features: ['Unrestricted Access', 'Military Encryption', 'Multi-device'],
-    stock: 500
+    stock: 500,
+    createdAt: '2023-12-01T14:00:00.000Z',
+    updatedAt: '2024-06-05T10:00:00.000Z'
   },
   {
     id: '6',
@@ -60,7 +72,9 @@ export const INITIAL_PRODUCTS: Product[] = [
     category: Category.DEV,
     image: 'https://picsum.photos/seed/cursor/400/300',
     features: ['Unlimited AI completions', 'Claude 3.5 support', 'Repo-wide indexing'],
-    stock: 80
+    stock: 80,
+    createdAt: '2024-03-10T15:00:00.000Z',
+    updatedAt: '2024-06-18T13:40:00.000Z'
   }
 ];
 
@@ -84,6 +98,37 @@ export const MOCK_VAULT_ITEMS: VaultItem[] = [
     purchaseDate: '2024-10-01',
     expiryDate: '2024-11-01',
     status: 'expiring-soon'
+  }
+];
+
+export const MOCK_USAGE_DATA: UsageData[] = [
+  {
+    productId: '1',
+    productName: 'ChatGPT Plus',
+    activeUsers: 1450,
+    plans: [
+      { name: 'Monthly Basic', count: 1200, revenue: 24000 },
+      { name: 'Yearly Pro', count: 250, revenue: 45000 }
+    ]
+  },
+  {
+    productId: '5',
+    productName: 'Outline VPN Key',
+    activeUsers: 3820,
+    plans: [
+      { name: '7-Day Trial', count: 820, revenue: 0 },
+      { name: '30-Day Pass', count: 2400, revenue: 12000 },
+      { name: 'Lifetime Access', count: 600, revenue: 30000 }
+    ]
+  },
+  {
+    productId: '4',
+    productName: 'Canva Pro',
+    activeUsers: 890,
+    plans: [
+      { name: 'Single User', count: 700, revenue: 6993 },
+      { name: 'Team Plan', count: 190, revenue: 5700 }
+    ]
   }
 ];
 

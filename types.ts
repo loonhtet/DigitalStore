@@ -16,6 +16,8 @@ export interface Product {
   image: string;
   features: string[];
   stock: number;
+  createdAt: string;
+  updatedAt: string;
 }
 
 export interface User {
@@ -24,7 +26,7 @@ export interface User {
   email: string;
   avatar: string;
   isAdmin: boolean;
-  provider: 'google' | 'facebook';
+  provider: 'google' | 'facebook' | 'credentials';
 }
 
 export interface VaultItem {
@@ -36,6 +38,17 @@ export interface VaultItem {
   purchaseDate: string;
   expiryDate: string;
   status: 'active' | 'expired' | 'expiring-soon';
+}
+
+export interface UsageData {
+  productId: string;
+  productName: string;
+  activeUsers: number;
+  plans: {
+    name: string;
+    count: number;
+    revenue: number;
+  }[];
 }
 
 export interface Inquiry {
